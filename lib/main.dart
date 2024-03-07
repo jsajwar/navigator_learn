@@ -1,20 +1,26 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import "package:flutter/material.dart";
 
 void main() {
   runApp(const MaterialApp(
-    home: First_page(),
+    home: FirstPage(),
   ));
 }
 
-class First_page extends StatelessWidget {
-  const First_page({super.key});
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
+        body: Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: [
+          Color.fromARGB(255, 88, 172, 240),
+          Color.fromARGB(255, 147, 92, 241)
+        ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+      ),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +34,7 @@ class First_page extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Second_page(),
+                      builder: (context) => SecondPage(),
                     ));
               },
               child: Text(
@@ -44,13 +50,19 @@ class First_page extends StatelessWidget {
   }
 }
 
-class Second_page extends StatelessWidget {
-  const Second_page({super.key});
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(255, 88, 172, 240),
+            Color.fromARGB(255, 147, 92, 241)
+          ], begin: Alignment.bottomRight, end: Alignment.topLeft),
+        ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
